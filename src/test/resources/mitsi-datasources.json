@@ -1,0 +1,41 @@
+{ 
+  "datasources" : {
+   	// comment test
+	  "LOCALHOST-TEST" :  {
+	    "userGroups" : [ "_public" ],
+		"description" : "the test datasource for anything",
+		"provider" : "oracle-light",
+		"driver" : "oracle.jdbc.driver.OracleDriver",
+		"jdbcUrl" : "jdbc:oracle:thin:@mitsitestserver:1521:XE",
+		"user" : "test",
+		"password" : "test",
+		"connectSchema" : "TEST",
+		"pool" : {
+			initialSize      : 3,
+			minSize          : 0,
+			maxSize          : 10,
+			maxIdleTimeSec   : 10,
+			acquireIncrement : 1
+		}
+	  },
+	  "LOCALHOST-XE2": {
+	    "userGroups" : [ "xe2", "guest" ],
+		"description" : "another test datasource", 
+		"provider" : "oracle-light",
+		"driver" : "oracle.jdbc.driver.OracleDriver",
+		"jdbcUrl" : "jdbc:oracle:thin:@mitsitestserver:1521:XE",
+		"user" : "xe2",
+		"password" : "xe2"
+	  },
+	  "LOCALHOST-XE2-ON-TEST": {
+	    "userGroups" : [ "xe2" ],
+		"description" : "another test datasource", 
+		"provider" : "oracle-light",
+		"driver" : "oracle.jdbc.driver.OracleDriver",
+		"jdbcUrl" : "jdbc:oracle:thin:@mitsitestserver:1521:XE",
+		"user" : "xe2",
+		"password" : "xe2",
+		"connectSchema" : "TEST"
+	  }
+  } 
+}
